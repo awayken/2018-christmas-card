@@ -4,15 +4,15 @@ Pop quiz, hotshot: Merry Christmas!
 
 ## Components
 
-### <Introduction />
+### `<Introduction />`
 
 Introduces the user to the game and the card premise.
 
-### <SplitScreen />
+### `<SplitScreen />`
 
 Splits its children into two panels, which align vertically for narrow screens and horizontally for wide screens.
 
-### <Progress />
+### `<Progress />`
 
 Tracks progress through the game.
 
@@ -23,7 +23,7 @@ Tracks progress through the game.
   * onChange - a callback to be called upon navigation
   * simple - a boolean for rendering a simple arrow navigation or more complex step-based navigation
 
-### <Reward></Reward>
+### `<Reward></Reward>`
 
 Renders a reward, ideally for solving a `<Quiz />`.
 
@@ -34,7 +34,7 @@ Renders a reward, ideally for solving a `<Quiz />`.
   * show - a boolean for whether to show reward content or not
   * children - the content of the reward
 
-### <Quiz />
+### `<Quiz />`
 
 Presents a question and possible answers for the reader to choose from.
 
@@ -45,6 +45,6 @@ Presents a question and possible answers for the reader to choose from.
   * correctAnswer - a string of the correct answer ID
   * chosenAnswer - a string of the answer ID chosen by the reader
 
-### <Game />
+### `<Game />`
 
 Handles the state of all the various child components above.
