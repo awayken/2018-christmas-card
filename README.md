@@ -1,50 +1,44 @@
-# 2018 Christmas Card
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Pop quiz, hotshot: Merry Christmas!
+## Available Scripts
 
-## Components
+In the project directory, you can run:
 
-### `<Introduction />`
+### `npm start`
 
-Introduces the user to the game and the card premise.
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### `<SplitScreen />`
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-Splits its children into two panels, which align vertically for narrow screens and horizontally for wide screens.
+### `npm test`
 
-### `<Progress />`
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Tracks progress through the game.
+### `npm run build`
 
-**Props**
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-  * steps - an array of steps along the way
-  * current - a number representing the zero-based index of the current step
-  * onChange - a callback to be called upon navigation
-  * simple - a boolean for rendering a simple arrow navigation or more complex step-based navigation
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-### `<Reward></Reward>`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Renders a reward, ideally for solving a `<Quiz />`.
+### `npm run eject`
 
-**Props**
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-  * image - a string to an image src
-  * video - a string to a YouTube video source
-  * show - a boolean for whether to show reward content or not
-  * children - the content of the reward
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### `<Quiz />`
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Presents a question and possible answers for the reader to choose from.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-**Props**
+## Learn More
 
-  * question - a string of the question
-  * answers - an array of strings of possible answers
-  * correctAnswer - a string of the correct answer ID
-  * chosenAnswer - a string of the answer ID chosen by the reader
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### `<Game />`
-
-Handles the state of all the various child components above.
+To learn React, check out the [React documentation](https://reactjs.org/).
