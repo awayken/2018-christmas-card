@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 2018 Christmas Card
+
+Pop quiz, hotshot: Merry Christmas!
 
 ## Available Scripts
 
@@ -27,18 +29,49 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Components
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### `<Introduction />`
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Introduces the user to the game and the card premise.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### `<SplitScreen />`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Splits its children into two panels, which align vertically for narrow screens and horizontally for wide screens.
 
-## Learn More
+### `<Progress />`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Tracks progress through the game.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Props**
+
+  * steps - an array of steps along the way
+  * current - a number representing the zero-based index of the current step
+  * onChange - a callback to be called upon navigation
+  * simple - a boolean for rendering a simple arrow navigation or more complex step-based navigation
+
+### `<Reward></Reward>`
+
+Renders a reward, ideally for solving a `<Quiz />`.
+
+**Props**
+
+  * image - a string to an image src
+  * video - a string to a YouTube video source
+  * show - a boolean for whether to show reward content or not
+  * children - the content of the reward
+
+### `<Quiz />`
+
+Presents a question and possible answers for the reader to choose from.
+
+**Props**
+
+  * question - a string of the question
+  * answers - an array of strings of possible answers
+  * correctAnswer - a string of the correct answer ID
+  * chosenAnswer - a string of the answer ID chosen by the reader
+
+### `<Game />`
+
+Handles the state of all the various child components above.
