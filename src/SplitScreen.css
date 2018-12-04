@@ -1,14 +1,14 @@
 .split {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .split__screen {
-    flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 @media (min-width: 768px) {
-    .split {
-        flex-direction: row;
-    }
+  .split {
+    flex-direction: row;
+  }
 }
