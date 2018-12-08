@@ -3,11 +3,13 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import '../index.css';
+import { answers } from './data';
+
 import App from '../App';
 import Quiz from '../Quiz';
+import Progress from '../Progress';
 import Reward from '../Reward';
 import SplitScreen from '../SplitScreen';
-import { answers } from './data';
 
 storiesOf('App', module).add('renders', () => <App />);
 
@@ -39,25 +41,54 @@ storiesOf('Quiz', module)
         />
     ));
 
-storiesOf('SplitScreen', module)
-    .add('renders 2 children', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-        </SplitScreen>
+storiesOf('Progress', module)
+    .add('renders simple', () => (
+        <Progress onChange={action('progress-change')} />
     ))
-    .add('renders 1 child', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-        </SplitScreen>
+    .add('renders simple, step 1', () => (
+        <Progress
+            current={0}
+            onChange={action('progress-change')}
+            totalSteps={10}
+        />
     ))
-    .add('renders more children', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-            <p>Panel 3</p>
-            <p>Panel 4</p>
-        </SplitScreen>
+    .add('renders simple, step 5', () => (
+        <Progress
+            current={4}
+            onChange={action('progress-change')}
+            totalSteps={10}
+        />
+    ))
+    .add('renders simple, step 10', () => (
+        <Progress
+            current={9}
+            onChange={action('progress-change')}
+            totalSteps={10}
+        />
+    ))
+    .add('renders steps, step 1', () => (
+        <Progress
+            current={0}
+            onChange={action('progress-change')}
+            showSteps={true}
+            totalSteps={10}
+        />
+    ))
+    .add('renders steps, step 5', () => (
+        <Progress
+            current={4}
+            onChange={action('progress-change')}
+            showSteps={true}
+            totalSteps={10}
+        />
+    ))
+    .add('renders steps, step 10', () => (
+        <Progress
+            current={9}
+            onChange={action('progress-change')}
+            showSteps={true}
+            totalSteps={10}
+        />
     ));
 
 storiesOf('Reward', module)
@@ -77,4 +108,25 @@ storiesOf('Reward', module)
         <Reward video="https://youtu.be/bHFbaF9_kpI" show={true}>
             <p>This year we saw this cool video!</p>
         </Reward>
+    ));
+
+storiesOf('SplitScreen', module)
+    .add('renders 2 children', () => (
+        <SplitScreen>
+            <p>Panel 1</p>
+            <p>Panel 2</p>
+        </SplitScreen>
+    ))
+    .add('renders 1 child', () => (
+        <SplitScreen>
+            <p>Panel 1</p>
+        </SplitScreen>
+    ))
+    .add('renders more children', () => (
+        <SplitScreen>
+            <p>Panel 1</p>
+            <p>Panel 2</p>
+            <p>Panel 3</p>
+            <p>Panel 4</p>
+        </SplitScreen>
     ));
