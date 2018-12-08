@@ -6,12 +6,17 @@ import '../index.css';
 import { answers } from './data';
 
 import App from '../App';
+import Introduction from '../Introduction';
 import Quiz from '../Quiz';
 import Progress from '../Progress';
 import Reward from '../Reward';
 import SplitScreen from '../SplitScreen';
 
 storiesOf('App', module).add('renders', () => <App />);
+
+storiesOf('Introduction', module).add('renders', () => (
+    <Introduction onStart={action('introduction-start')} />
+));
 
 storiesOf('Quiz', module)
     .add('renders question', () => (
