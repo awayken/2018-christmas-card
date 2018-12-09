@@ -41,7 +41,8 @@
     border-color: inherit;
 }
 
-.quiz__answer--correct {
+.quiz__answer--correct,
+.quiz__answer--wascorrect {
     border-color: green;
     color: green;
 }
@@ -52,7 +53,8 @@
 }
 
 .quiz__answer--correct::before,
-.quiz__answer--incorrect::before {
+.quiz__answer--incorrect::before,
+.quiz__answer--wascorrect::before {
     display: inline-block;
     margin-right: 0.3em;
     vertical-align: middle;
@@ -64,4 +66,8 @@
 
 .quiz__answer--incorrect::before {
     content: '❌';
+}
+
+.quiz__answer--wascorrect::before {
+    content: '➡️';
 }

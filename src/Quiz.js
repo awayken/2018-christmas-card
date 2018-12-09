@@ -29,9 +29,16 @@ function Quiz({
                                     hasAnswered && !isCorrect
                                         ? 'quiz__answer--incorrect'
                                         : ''
+                                } ${
+                                    selectedAnswer.length &&
+                                    !isCorrect &&
+                                    correctAnswer === id
+                                        ? 'quiz__answer--wascorrect'
+                                        : ''
                                 }`}
                                 disabled={selectedAnswer.length}
                                 onClick={onAnswer}
+                                type="button"
                                 value={id}
                             >
                                 {text}
