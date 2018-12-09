@@ -22,10 +22,51 @@ export const questions = [
             { id: 'm03', text: `It's literally just 200 blank pages.` }
         ],
         correctAnswer: 'm01'
+    },
+    {
+        category: 'Miles',
+        question: `This is sample question 2. What is the answer?`,
+        answers: [
+            {
+                id: 'm00',
+                text: `A young novelist somehow wins a fiction prize and has to deal with feelings of inadequacy.`
+            },
+            {
+                id: 'm01',
+                text: `An old lady wakes up knowing she will die that day and tries to tie up loose ends.`
+            },
+            {
+                id: 'm02',
+                text: `A man wakes up in a world where memory can be erased with a drug and must fight against the company that makes it.`
+            },
+            { id: 'm03', text: `It's literally just 200 blank pages.` }
+        ],
+        correctAnswer: 'm03'
     }
 ];
 
 export const rewards = [
+    {
+        alt: 'A screenshot of the Winners page on BlazingLantern.com',
+        content: (
+            <p>
+                While it hasn't lead to literary domination, Miles was astounded
+                to learn that{' '}
+                <a
+                    href="http://www.blazinglantern.com/winner-miles-rausch.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    his novel won the competition
+                </a>
+                . The plot was inspired by elements of the life of his
+                grandmother, Harriet Rausch, who passed away this past March. He
+                finished and submitted the novel on the weekend of her funeral.
+                He hopes she likes it.
+            </p>
+        ),
+        image: miles0
+    },
     {
         alt: 'A screenshot of the Winners page on BlazingLantern.com',
         content: (
