@@ -59,7 +59,7 @@ class App extends Component {
 
         const activeAnswer = answers[currentQuestion];
         const activeQuestion = questions[currentQuestion];
-        const activeReward = rewards[currentQuestion];
+        const activeReward = rewards[activeQuestion.correctAnswer];
 
         return (
             <main className="app">
@@ -79,6 +79,15 @@ class App extends Component {
                             >
                                 {activeReward.content}
                             </Reward>
+
+                            {!!activeAnswer && (
+                                <button
+                                    onClick={this.handleProgress}
+                                    value="next"
+                                >
+                                    Next Question
+                                </button>
+                            )}
                         </div>
 
                         <Quiz
