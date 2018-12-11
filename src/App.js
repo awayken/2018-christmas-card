@@ -80,14 +80,15 @@ class App extends Component {
                                 {activeReward.content}
                             </Reward>
 
-                            {!!activeAnswer && (
-                                <button
-                                    onClick={this.handleProgress}
-                                    value="next"
-                                >
-                                    Next Question
-                                </button>
-                            )}
+                            {!!activeAnswer &&
+                                currentQuestion < questions.length - 1 && (
+                                    <button
+                                        onClick={this.handleProgress}
+                                        value="next"
+                                    >
+                                        Next Question
+                                    </button>
+                                )}
                         </div>
 
                         <Quiz

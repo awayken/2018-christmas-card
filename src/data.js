@@ -2,7 +2,11 @@ import React from 'react';
 
 import ainsleySchool from './rewards/ainsley-school.jpg';
 import ainsleyTooth from './rewards/ainsley-tooth.jpg';
+import babyCelebration from './rewards/baby-celebration.jpg';
+import holliDisney from './rewards/holli-disney.jpg';
+import holliHamilton from './rewards/holli-hamilton.jpg';
 import ianGlasses from './rewards/ian-glasses.jpg';
+import ianNaughtyNice from './rewards/ian-naughty-nice.jpg';
 import milesNovel from './rewards/no-story-to-tell.png';
 
 export const questions = [
@@ -168,7 +172,7 @@ export const rewards = {
         content: <p>Hello</p>,
         image: ainsleySchool
     },
-    b01: { alt: 'Baby!', content: <p>Baby!</p>, image: null },
+    b01: { alt: 'Baby!', content: <p>Baby!</p>, image: babyCelebration },
     b10: {
         alt: `It's a boy!`,
         content: <p>Baby!</p>,
@@ -182,7 +186,7 @@ export const rewards = {
     i13: {
         alt: `Naughty or Nice? asks Ian's sweater`,
         content: <p>Naughty or Nice?</p>,
-        image: null
+        image: ianNaughtyNice
     },
     h01: {
         alt: 'The Bride Squad at Magic Kingdom',
@@ -192,12 +196,12 @@ export const rewards = {
                 August and showed that mouse what's up.
             </p>
         ),
-        image: null
+        image: holliDisney
     },
     h13: {
         alt: 'Holli, Cari and Marissa at Hamilton in Des Moines',
         content: <p>Alexander Hamilton.</p>,
-        image: null
+        image: holliHamilton
     },
     m01: {
         alt: 'A screenshot of the Winners page on BlazingLantern.com',
