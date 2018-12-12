@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Reward.css';
 
 export function getEmbedSrc(video = '') {
@@ -18,7 +19,9 @@ export function getEmbedSrc(video = '') {
 }
 
 function RewardSpinner({ preamble }) {
-    const spinner = preamble || `Answer the quiz to see the reward...`;
+    const spinner = preamble || (
+        <p>Answer the quiz question to see your reward.</p>
+    );
     return (
         <aside className="reward__spinner" role="alert" aria-live="assertive">
             {spinner}

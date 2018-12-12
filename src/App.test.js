@@ -1,9 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import { preambles, questions, rewards } from './data';
-
 import App from './App';
+import { preambles, questions, rewards } from './data';
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
