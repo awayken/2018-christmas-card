@@ -98,6 +98,12 @@ storiesOf('Progress', module)
 
 storiesOf('Reward', module)
     .add('renders pending', () => <Reward show={false} />)
+    .add('renders preamble', () => (
+        <Reward
+            show={false}
+            preamble={<p>A custom Preamble instead of default spinner text.</p>}
+        />
+    ))
     .add('renders image', () => (
         <Reward image="https://placehold.it/800x600" show={true} />
     ))

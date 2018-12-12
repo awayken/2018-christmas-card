@@ -17,10 +17,11 @@ export function getEmbedSrc(video = '') {
     return embedSrc;
 }
 
-function RewardSpinner() {
+function RewardSpinner({ preamble }) {
+    const spinner = preamble || `Answer the quiz to see the reward...`;
     return (
         <aside className="reward__spinner" role="alert" aria-live="assertive">
-            Answer the quiz to see the reward...
+            {spinner}
         </aside>
     );
 }
@@ -49,7 +50,7 @@ function RewardVideo({ title = '', video }) {
     );
 }
 
-function Reward({ alt = '', image, show = false, video, children }) {
+function Reward({ alt = '', image, preamble, show = false, video, children }) {
     let hero = null;
 
     if (image) {
@@ -60,7 +61,7 @@ function Reward({ alt = '', image, show = false, video, children }) {
 
     return (
         <section className="reward">
-            {!show && <RewardSpinner />}
+            {!show && <RewardSpinner preamble={preamble} />}
 
             {show && hero}
 

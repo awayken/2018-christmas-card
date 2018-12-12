@@ -54,11 +54,12 @@ class App extends Component {
     };
 
     render() {
-        const { questions, rewards } = this.props;
+        const { preambles, questions, rewards } = this.props;
         const { answers, currentQuestion, startQuiz } = this.state;
 
         const activeAnswer = answers[currentQuestion];
         const activeQuestion = questions[currentQuestion];
+        const activePreamble = preambles[activeQuestion.preamble];
         const activeReward = rewards[activeQuestion.correctAnswer];
 
         return (
@@ -73,6 +74,7 @@ class App extends Component {
                                 totalSteps={questions.length}
                             />
                             <Reward
+                                preamble={activePreamble}
                                 image={activeReward.image}
                                 show={!!activeAnswer}
                                 video={activeReward.video}

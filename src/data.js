@@ -11,7 +11,7 @@ import milesNovel from './rewards/no-story-to-tell.png';
 
 export const questions = [
     {
-        category: 'Miles',
+        preamble: 'miles',
         question: `Miles's novel, No Story to Tell, won the Blazing Lantern Fiction Prize this year. What is the plot of that novel?`,
         answers: [
             {
@@ -31,7 +31,6 @@ export const questions = [
         correctAnswer: 'm01'
     },
     {
-        category: 'Miles',
         question: `This is sample question 2. What is the answer?`,
         answers: [
             {
@@ -51,7 +50,7 @@ export const questions = [
         correctAnswer: 'm10'
     },
     {
-        category: 'Holli',
+        preamble: 'holli',
         question: `Holli loves Disney World. What was the reason for her visit there this summer?`,
         answers: [
             {
@@ -74,7 +73,6 @@ export const questions = [
         correctAnswer: 'h01'
     },
     {
-        category: 'Holli',
         question: `Holli's favorite musical is Hamilton. Where did Holli see performances of Hamilton this year?`,
         answers: [
             { id: 'h10', text: `Nowhere yet. 2019 is the year!` },
@@ -85,7 +83,7 @@ export const questions = [
         correctAnswer: 'h13'
     },
     {
-        category: 'Ian',
+        preamble: 'ian',
         question: `Ian added a new accessory to his wardrobe this year. What is it?`,
         answers: [
             { id: 'i00', text: `Eyeglasses` },
@@ -96,7 +94,6 @@ export const questions = [
         correctAnswer: 'i00'
     },
     {
-        category: 'Ian',
         question: `What Catholic sacrament did Ian experience this year?`,
         answers: [
             { id: 'i10', text: `Baptism` },
@@ -107,7 +104,7 @@ export const questions = [
         correctAnswer: 'i13'
     },
     {
-        category: 'Ainsley',
+        preamble: 'ainsley',
         question: `Ainsley lost her first tooth this year. How did it happen?`,
         answers: [
             { id: 'a00', text: `Wrestling with her brother.` },
@@ -127,7 +124,6 @@ export const questions = [
         correctAnswer: 'a02'
     },
     {
-        category: 'Ainsley',
         question: `Ainsley is learning to read this year. Which is her favorite word so far?`,
         answers: [
             { id: 'a10', text: `for` },
@@ -138,7 +134,7 @@ export const questions = [
         correctAnswer: 'a10'
     },
     {
-        category: 'Blueberry',
+        preamble: 'blueberry',
         question: `A little something new is coming soon. When is our bundle of joy expected?`,
         answers: [
             { id: 'b00', text: `April 12` },
@@ -149,7 +145,6 @@ export const questions = [
         correctAnswer: 'b01'
     },
     {
-        category: 'Blueberry',
         question: `It's been a secret for the past month, but we're ready to share now. What is the baby's gender?`,
         answers: [
             { id: 'b10', text: `Boy` },
@@ -225,4 +220,12 @@ export const rewards = {
         image: milesNovel
     },
     m10: { alt: null, content: null, image: null }
+};
+
+export const preambles = {
+    miles: <p>Preamble about Miles.</p>,
+    holli: <p>Preamble about Holli</p>,
+    ian: <p>Preamble about Ian</p>,
+    ainsley: <p>Preamble about Ainsley</p>,
+    blueberry: <p>Preamble about Blueberry</p>
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { questions, rewards } from './data';
+import { preambles, questions, rewards } from './data';
 import './index.css';
 
 import App from './App';
@@ -9,7 +9,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-    <App questions={questions} rewards={rewards} />,
+    <App preambles={preambles} questions={questions} rewards={rewards} />,
     document.getElementById('root')
 );
 
