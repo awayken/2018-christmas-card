@@ -330,9 +330,48 @@ export const rewards = {
 };
 
 export const preambles = {
-    miles: <p>Preamble about Miles.</p>,
-    holli: <p>Preamble about Holli</p>,
-    ian: <p>Preamble about Ian</p>,
-    ainsley: <p>Preamble about Ainsley</p>,
-    blueberry: <p>Preamble about Blueberry</p>
+    miles: (
+        <p>
+            <strong>Miles</strong> turned 35 in 2018. He spends his days as a
+            Web Developer and his nights as a writer. He's writing this
+            sentence, actually. He doesn't know what else to say about himself.
+        </p>
+    ),
+    holli: (
+        <p>
+            <strong>Holli</strong> became 32 years old this past year. She's in
+            her XX year of teaching at New Tech High School. Holli recently took
+            up reading as a hobby which feels like the endgame to some
+            long-established scheme that Miles thought up decades ago, but it
+            isn't.
+        </p>
+    ),
+    ian: (
+        <p>
+            <strong>Ian</strong> lives life as an eight year old in 2nd Grade.
+            He loves to read chapter books, comic books and wildlife books. When
+            he's not reading, he's usually building with LEGO pieces or drawing
+            elaborate machines or Frankensteinian monsters. His wit,
+            intelligence and eavesdropping skills have made it impossible for
+            adults to have discussions around him.
+        </p>
+    ),
+    ainsley: (
+        <p>
+            <strong>Ainsley</strong> is now six years old. She started
+            Kindergarten and has been very busy counting, reading and writing.
+            She enjoys coloring and drawing and knows that you need to add huge
+            eyelashes if you want the viewer to know that you are drawing a
+            girl. She skips whenever and wherever possible, hopefully wearing a
+            dress and high heels and maybe a Batman helmet.
+        </p>
+    ),
+    blueberry: (
+        <p>
+            <strong>Baby Rausch</strong> is 0 years old. Baby spends most of
+            their time making mom feel sick or tired. Sometimes Baby will kick
+            and punch like crazy. Baby has done very little to establish any
+            sort of interesting personality.
+        </p>
+    )
 };
