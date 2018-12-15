@@ -21,7 +21,7 @@ function Quiz({
                     return (
                         <li className="quiz__answerbox" key={id}>
                             <button
-                                className={`quiz__answer ${
+                                className={`quiz__answer btn ${
                                     hasAnswered && isCorrect
                                         ? 'quiz__answer--correct'
                                         : ''

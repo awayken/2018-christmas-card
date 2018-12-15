@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './Reward.css';
 
 export function getEmbedSrc(video = '') {
@@ -23,7 +22,7 @@ function RewardSpinner({ preamble }) {
         <p>Answer the quiz question to see your reward.</p>
     );
     return (
-        <aside className="reward__spinner" role="alert" aria-live="assertive">
+        <aside className="reward__preamble" role="alert" aria-live="assertive">
             {spinner}
         </aside>
     );
@@ -43,7 +42,7 @@ function RewardVideo({ title = '', video }) {
     return (
         <div className="reward__videobox">
             <iframe
-                allowFullscreen
+                allowFullScreen
                 className="reward__video"
                 frameBorder="0"
                 src={embedVideo}
@@ -68,7 +67,7 @@ function Reward({ alt = '', image, preamble, show = false, video, children }) {
 
             {show && hero}
 
-            {show && children}
+            {show && <div className="reward__children">{children}</div>}
         </section>
     );
 }

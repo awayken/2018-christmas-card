@@ -3,13 +3,8 @@
 }
 
 .introduction__heading {
+    color: #b22222;
     font-size: 2em;
-}
-
-.introduction__button {
-    display: block;
-    font-family: inherit;
-    font-size: 1.5em;
-    margin: 0 auto;
-    max-width: 8em;
+    margin: 0;
+    text-align: center;
 }
