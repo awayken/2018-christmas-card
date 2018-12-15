@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 
+import ErrorBoundary from './ErrorBoundary';
 import Introduction from './Introduction';
 import Progress from './Progress';
 import Quiz from './Quiz';
@@ -58,7 +59,7 @@ class App extends Component {
         const { answers, currentQuestion, startQuiz } = this.state;
 
         const activeAnswer = answers[currentQuestion];
-        const activeQuestion = questions[currentQuestion];
+        const activeQuestion = questions[currentQuestion] || {};
         const activePreamble = preambles[activeQuestion.preamble];
         const activeReward = rewards[activeQuestion.correctAnswer];
 
@@ -67,24 +68,29 @@ class App extends Component {
                 {startQuiz ? (
                     <SplitScreen>
                         <div>
-                            <Progress
-                                current={currentQuestion}
-                                onChange={this.handleProgress}
-                                showSteps={true}
-                                totalSteps={questions.length}
-                            />
-                            <Reward
-                                preamble={activePreamble}
-                                image={activeReward.image}
-                                show={!!activeAnswer}
-                                video={activeReward.video}
-                            >
-                                {activeReward.content}
-                            </Reward>
+                            <ErrorBoundary>
+                                <Progress
+                                    current={currentQuestion}
+                                    onChange={this.handleProgress}
+                                    showSteps={true}
+                                    totalSteps={questions.length}
+                                />
+                            </ErrorBoundary>
+                            <ErrorBoundary>
+                                <Reward
+                                    preamble={activePreamble}
+                                    image={activeReward.image}
+                                    show={!!activeAnswer}
+                                    video={activeReward.video}
+                                >
+                                    {activeReward.content}
+                                </Reward>
+                            </ErrorBoundary>
 
                             {!!activeAnswer &&
                                 currentQuestion < questions.length - 1 && (
                                     <button
+                                        className="btn btn--next btn--primary"
                                         onClick={this.handleProgress}
                                         value="next"
                                     >
@@ -93,16 +99,20 @@ class App extends Component {
                                 )}
                         </div>
 
-                        <Quiz
-                            question={activeQuestion.question}
-                            answers={activeQuestion.answers}
-                            correctAnswer={activeQuestion.correctAnswer}
-                            selectedAnswer={activeAnswer}
-                            onAnswer={this.handleAnswer}
-                        />
+                        <ErrorBoundary>
+                            <Quiz
+                                question={activeQuestion.question}
+                                answers={activeQuestion.answers}
+                                correctAnswer={activeQuestion.correctAnswer}
+                                selectedAnswer={activeAnswer}
+                                onAnswer={this.handleAnswer}
+                            />
+                        </ErrorBoundary>
                     </SplitScreen>
                 ) : (
-                    <Introduction onStart={this.startQuiz} />
+                    <ErrorBoundary>
+                        <Introduction onStart={this.startQuiz} />
+                    </ErrorBoundary>
                 )}
             </main>
         );
