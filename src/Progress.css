@@ -1,19 +1,11 @@
 .progress {
     align-items: center;
-    background: gray;
+    border-bottom: 2px solid #000;
     display: flex;
     justify-content: center;
     padding: 0.5em;
 }
 
-.progress__button {
-    border: 1px solid black;
-    font-family: inherit;
-    line-height: 1;
+.progress--pager {
     margin: 0 0.25em;
-    padding: 0.5em;
-}
-
-.progress__button--current {
-    background: silver;
 }

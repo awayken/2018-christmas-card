@@ -5,14 +5,18 @@ import { action } from '@storybook/addon-actions';
 import '../index.css';
 import { answers } from './data';
 
-import App from '../App';
+import ErrorBoundary, { ProblemChild } from '../ErrorBoundary';
 import Introduction from '../Introduction';
 import Quiz from '../Quiz';
 import Progress from '../Progress';
 import Reward from '../Reward';
 import SplitScreen from '../SplitScreen';
 
-storiesOf('App', module).add('renders', () => <App />);
+storiesOf('ErrorBoundary', module).add('renders', () => (
+    <ErrorBoundary>
+        <ProblemChild />
+    </ErrorBoundary>
+));
 
 storiesOf('Introduction', module).add('renders', () => (
     <Introduction onStart={action('introduction-start')} />
@@ -98,6 +102,12 @@ storiesOf('Progress', module)
 
 storiesOf('Reward', module)
     .add('renders pending', () => <Reward show={false} />)
+    .add('renders preamble', () => (
+        <Reward
+            show={false}
+            preamble={<p>A custom Preamble instead of default spinner text.</p>}
+        />
+    ))
     .add('renders image', () => (
         <Reward image="https://placehold.it/800x600" show={true} />
     ))

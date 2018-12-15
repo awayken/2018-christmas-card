@@ -14,7 +14,7 @@
     }
 
     .split__screen {
-        max-height: 100vh;
+        height: calc(100vh - 2em - 6px);
         overflow: auto;
     }
 }
