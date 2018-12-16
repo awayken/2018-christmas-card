@@ -7,7 +7,8 @@ import holliDisney from './rewards/holli-disney.jpg';
 import holliHamilton from './rewards/holli-hamilton.jpg';
 import ianGlasses from './rewards/ian-glasses.jpg';
 import ianNaughtyNice from './rewards/ian-naughty-nice.jpg';
-import milesNovel from './rewards/no-story-to-tell.png';
+import milesCarsforsale from './rewards/miles-carsforsale.jpg';
+import milesNovel from './rewards/miles-no-story-to-tell.jpg';
 
 export const questions = [
     {
@@ -325,7 +326,7 @@ export const rewards = {
                 Win-win-win. Triple win.
             </p>
         ),
-        image: null
+        image: milesCarsforsale
     }
 };
 

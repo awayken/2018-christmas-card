@@ -20,6 +20,27 @@ class App extends Component {
         };
     }
 
+    componentDidMount() {
+        document.body.addEventListener('keyup', this.handleArrows);
+    }
+
+    componentWillUnmount() {
+        document.body.removeEventListener('keyup', this.handleArrows);
+    }
+
+    handleArrows = event => {
+        const { startQuiz } = this.state;
+        const key = event.key;
+
+        if (startQuiz) {
+            if (key === 'ArrowRight') {
+                this.handleProgress('next');
+            } else if (key === 'ArrowLeft') {
+                this.handleProgress('back');
+            }
+        }
+    };
+
     handleAnswer = answer => {
         const { answers, currentQuestion } = this.state;
         const newAnswers = [...answers];
@@ -32,19 +53,31 @@ class App extends Component {
     };
 
     handleProgress = progress => {
+        const { questions } = this.props;
         const { currentQuestion } = this.state;
-        let newQuestion = progress.target.value;
 
-        if (newQuestion === 'next') {
-            newQuestion = currentQuestion + 1;
-        } else if (newQuestion === 'back') {
-            newQuestion = currentQuestion - 1;
+        let progressValue = progress;
+        if (progress.target) {
+            progressValue = progress.target.value;
+        }
+
+        let nextQuestion;
+        if (progressValue === 'next') {
+            nextQuestion = currentQuestion + 1;
+        } else if (progressValue === 'back') {
+            nextQuestion = currentQuestion - 1;
         } else {
-            newQuestion = parseInt(progress.target.value, 10);
+            nextQuestion = parseInt(progressValue, 10);
+        }
+
+        if (nextQuestion >= questions.length) {
+            nextQuestion = questions.length - 1;
+        } else if (nextQuestion < 0) {
+            nextQuestion = 0;
         }
 
         this.setState({
-            currentQuestion: newQuestion
+            currentQuestion: nextQuestion
         });
     };
 
@@ -87,17 +120,16 @@ class App extends Component {
                                 onAnswer={this.handleAnswer}
                             />
                         </ErrorBoundary>
-                        <div>
-                            <ErrorBoundary>
-                                <Reward
-                                    preamble={activePreamble}
-                                    image={activeReward.image}
-                                    show={!!activeAnswer}
-                                    video={activeReward.video}
-                                >
-                                    {activeReward.content}
-                                </Reward>
-                            </ErrorBoundary>
+
+                        <ErrorBoundary>
+                            <Reward
+                                preamble={activePreamble}
+                                image={activeReward.image}
+                                show={!!activeAnswer}
+                                video={activeReward.video}
+                            >
+                                {activeReward.content}
+                            </Reward>
 
                             {!!activeAnswer &&
                                 currentQuestion < questions.length - 1 && (
@@ -109,7 +141,7 @@ class App extends Component {
                                         Next Question
                                     </button>
                                 )}
-                        </div>
+                        </ErrorBoundary>
                     </SplitScreen>
                 ) : (
                     <ErrorBoundary>

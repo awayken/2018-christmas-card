@@ -72,6 +72,6 @@ Presents a question and possible answers for the reader to choose from.
   * correctAnswer - a string of the correct answer ID
   * chosenAnswer - a string of the answer ID chosen by the reader
 
-### `<Game />`
+### `<App />`
 
 Handles the state of all the various child components above.

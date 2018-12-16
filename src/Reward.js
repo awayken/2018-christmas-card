@@ -30,7 +30,7 @@ function RewardSpinner({ preamble }) {
 
 function RewardImage({ alt = '', image }) {
     return (
-        <div className="reward__imagebox">
+        <div className="reward__frame reward__imagebox">
             <img className="reward__image" src={image} alt={alt} />
         </div>
     );
@@ -40,14 +40,16 @@ function RewardVideo({ title = '', video }) {
     const embedVideo = `${getEmbedSrc(video)}?rel=0&autoplay=1`;
 
     return (
-        <div className="reward__videobox">
-            <iframe
-                allowFullScreen
-                className="reward__video"
-                frameBorder="0"
-                src={embedVideo}
-                title={title}
-            />
+        <div className="reward__frame">
+            <div className="reward__videobox">
+                <iframe
+                    allowFullScreen
+                    className="reward__video"
+                    frameBorder="0"
+                    src={embedVideo}
+                    title={title}
+                />
+            </div>
         </div>
     );
 }
