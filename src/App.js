@@ -67,6 +67,15 @@ class App extends Component {
             <main className="app">
                 {startQuiz ? (
                     <SplitScreen>
+                        <ErrorBoundary>
+                            <Quiz
+                                question={activeQuestion.question}
+                                answers={activeQuestion.answers}
+                                correctAnswer={activeQuestion.correctAnswer}
+                                selectedAnswer={activeAnswer}
+                                onAnswer={this.handleAnswer}
+                            />
+                        </ErrorBoundary>
                         <div>
                             <ErrorBoundary>
                                 <Progress
@@ -98,16 +107,6 @@ class App extends Component {
                                     </button>
                                 )}
                         </div>
-
-                        <ErrorBoundary>
-                            <Quiz
-                                question={activeQuestion.question}
-                                answers={activeQuestion.answers}
-                                correctAnswer={activeQuestion.correctAnswer}
-                                selectedAnswer={activeAnswer}
-                                onAnswer={this.handleAnswer}
-                            />
-                        </ErrorBoundary>
                     </SplitScreen>
                 ) : (
                     <ErrorBoundary>
