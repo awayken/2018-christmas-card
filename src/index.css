@@ -44,6 +44,7 @@ a:focus {
     );
     background-color: #b22222;
     background-size: 20px 20px;
+    padding: 1em;
 }
 
 .btn {
