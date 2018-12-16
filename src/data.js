@@ -8,7 +8,7 @@ import holliHamilton from './rewards/holli-hamilton.jpg';
 import ianGlasses from './rewards/ian-glasses.jpg';
 import ianNaughtyNice from './rewards/ian-naughty-nice.jpg';
 import milesCarsforsale from './rewards/miles-carsforsale.jpg';
-import milesNovel from './rewards/no-story-to-tell.png';
+import milesNovel from './rewards/miles-no-story-to-tell.jpg';
 
 export const questions = [
     {
