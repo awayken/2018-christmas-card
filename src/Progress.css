@@ -6,6 +6,20 @@
     padding: 0.5em;
 }
 
-.progress--pager {
+.progress__pager {
     margin: 0 0.25em;
+}
+
+.progress__step {
+    display: none;
+}
+
+.progress__step--active {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .progress__step {
+        display: block;
+    }
 }
