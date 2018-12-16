@@ -1,7 +1,11 @@
 .split {
     display: flex;
     flex-direction: column;
-    max-height: 100%;
+}
+
+.split__screens {
+    display: flex;
+    flex-direction: column;
 }
 
 .split__screen {
@@ -10,11 +14,16 @@
 
 @media (min-width: 768px) {
     .split {
+        height: calc(100vh - 2em - 6px);
+    }
+
+    .split__screens {
         flex-direction: row;
+        height: 100%;
     }
 
     .split__screen {
-        height: calc(100vh - 2em - 6px);
+        max-height: 100%;
         overflow: auto;
     }
 }

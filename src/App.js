@@ -66,8 +66,8 @@ class App extends Component {
         return (
             <main className="app">
                 {startQuiz ? (
-                    <SplitScreen>
-                        <div>
+                    <SplitScreen
+                        header={
                             <ErrorBoundary>
                                 <Progress
                                     current={currentQuestion}
@@ -76,6 +76,18 @@ class App extends Component {
                                     totalSteps={questions.length}
                                 />
                             </ErrorBoundary>
+                        }
+                    >
+                        <ErrorBoundary>
+                            <Quiz
+                                question={activeQuestion.question}
+                                answers={activeQuestion.answers}
+                                correctAnswer={activeQuestion.correctAnswer}
+                                selectedAnswer={activeAnswer}
+                                onAnswer={this.handleAnswer}
+                            />
+                        </ErrorBoundary>
+                        <div>
                             <ErrorBoundary>
                                 <Reward
                                     preamble={activePreamble}
@@ -98,16 +110,6 @@ class App extends Component {
                                     </button>
                                 )}
                         </div>
-
-                        <ErrorBoundary>
-                            <Quiz
-                                question={activeQuestion.question}
-                                answers={activeQuestion.answers}
-                                correctAnswer={activeQuestion.correctAnswer}
-                                selectedAnswer={activeAnswer}
-                                onAnswer={this.handleAnswer}
-                            />
-                        </ErrorBoundary>
                     </SplitScreen>
                 ) : (
                     <ErrorBoundary>
