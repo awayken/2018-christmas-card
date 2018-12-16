@@ -87,17 +87,16 @@ class App extends Component {
                                 onAnswer={this.handleAnswer}
                             />
                         </ErrorBoundary>
-                        <div>
-                            <ErrorBoundary>
-                                <Reward
-                                    preamble={activePreamble}
-                                    image={activeReward.image}
-                                    show={!!activeAnswer}
-                                    video={activeReward.video}
-                                >
-                                    {activeReward.content}
-                                </Reward>
-                            </ErrorBoundary>
+
+                        <ErrorBoundary>
+                            <Reward
+                                preamble={activePreamble}
+                                image={activeReward.image}
+                                show={!!activeAnswer}
+                                video={activeReward.video}
+                            >
+                                {activeReward.content}
+                            </Reward>
 
                             {!!activeAnswer &&
                                 currentQuestion < questions.length - 1 && (
@@ -109,7 +108,7 @@ class App extends Component {
                                         Next Question
                                     </button>
                                 )}
-                        </div>
+                        </ErrorBoundary>
                     </SplitScreen>
                 ) : (
                     <ErrorBoundary>
