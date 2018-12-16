@@ -1,7 +1,7 @@
 import React from 'react';
 import './SplitScreen.css';
 
-function SplitScreen({ children }) {
+function SplitScreen({ header, children }) {
     if (!children || children.length === 0) {
         return null;
     }
@@ -17,8 +17,12 @@ function SplitScreen({ children }) {
 
     return (
         <div className="split">
-            <div className="split__screen">{firstChild}</div>
-            {otherChildrenScreen}
+            {header}
+
+            <div className="split__screens">
+                <div className="split__screen">{firstChild}</div>
+                {otherChildrenScreen}
+            </div>
         </div>
     );
 }

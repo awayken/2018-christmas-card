@@ -144,4 +144,10 @@ storiesOf('SplitScreen', module)
             <p>Panel 3</p>
             <p>Panel 4</p>
         </SplitScreen>
+    ))
+    .add('renders with a header', () => (
+        <SplitScreen header={<p>Header.</p>}>
+            <p>Panel 1</p>
+            <p>Panel 2</p>
+        </SplitScreen>
     ));

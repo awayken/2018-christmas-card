@@ -66,7 +66,18 @@ class App extends Component {
         return (
             <main className="app">
                 {startQuiz ? (
-                    <SplitScreen>
+                    <SplitScreen
+                        header={
+                            <ErrorBoundary>
+                                <Progress
+                                    current={currentQuestion}
+                                    onChange={this.handleProgress}
+                                    showSteps={true}
+                                    totalSteps={questions.length}
+                                />
+                            </ErrorBoundary>
+                        }
+                    >
                         <ErrorBoundary>
                             <Quiz
                                 question={activeQuestion.question}
@@ -77,14 +88,6 @@ class App extends Component {
                             />
                         </ErrorBoundary>
                         <div>
-                            <ErrorBoundary>
-                                <Progress
-                                    current={currentQuestion}
-                                    onChange={this.handleProgress}
-                                    showSteps={true}
-                                    totalSteps={questions.length}
-                                />
-                            </ErrorBoundary>
                             <ErrorBoundary>
                                 <Reward
                                     preamble={activePreamble}
