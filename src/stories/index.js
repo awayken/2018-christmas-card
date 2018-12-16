@@ -54,32 +54,10 @@ storiesOf('Progress', module)
     .add('renders simple', () => (
         <Progress onChange={action('progress-change')} />
     ))
-    .add('renders simple, step 1', () => (
-        <Progress
-            current={0}
-            onChange={action('progress-change')}
-            totalSteps={10}
-        />
-    ))
-    .add('renders simple, step 5', () => (
-        <Progress
-            current={4}
-            onChange={action('progress-change')}
-            totalSteps={10}
-        />
-    ))
-    .add('renders simple, step 10', () => (
-        <Progress
-            current={9}
-            onChange={action('progress-change')}
-            totalSteps={10}
-        />
-    ))
     .add('renders steps, step 1', () => (
         <Progress
             current={0}
             onChange={action('progress-change')}
-            showSteps={true}
             totalSteps={10}
         />
     ))
@@ -87,7 +65,6 @@ storiesOf('Progress', module)
         <Progress
             current={4}
             onChange={action('progress-change')}
-            showSteps={true}
             totalSteps={10}
         />
     ))
@@ -95,7 +72,6 @@ storiesOf('Progress', module)
         <Progress
             current={9}
             onChange={action('progress-change')}
-            showSteps={true}
             totalSteps={10}
         />
     ));
