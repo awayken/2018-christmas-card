@@ -48,6 +48,7 @@ a:focus {
 
 .btn {
     appearance: none;
+    background: #fff;
     border: 2px solid #000;
     border-radius: 0.35em;
     box-shadow: 0 2px 0.35em rgba(0, 0, 0, 0.4);
