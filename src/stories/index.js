@@ -10,7 +10,6 @@ import Introduction from '../Introduction';
 import Quiz from '../Quiz';
 import Progress from '../Progress';
 import Reward from '../Reward';
-import SplitScreen from '../SplitScreen';
 
 storiesOf('ErrorBoundary', module).add('renders', () => (
     <ErrorBoundary>
@@ -99,31 +98,4 @@ storiesOf('Reward', module)
         <Reward video="https://youtu.be/bHFbaF9_kpI" show={true}>
             <p>This year we saw this cool video!</p>
         </Reward>
-    ));
-
-storiesOf('SplitScreen', module)
-    .add('renders 2 children', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-        </SplitScreen>
-    ))
-    .add('renders 1 child', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-        </SplitScreen>
-    ))
-    .add('renders more children', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-            <p>Panel 3</p>
-            <p>Panel 4</p>
-        </SplitScreen>
-    ))
-    .add('renders with a header', () => (
-        <SplitScreen header={<p>Header.</p>}>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-        </SplitScreen>
     ));

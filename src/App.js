@@ -7,7 +7,6 @@ import Introduction from './Introduction';
 import Progress from './Progress';
 import Quiz from './Quiz';
 import Reward from './Reward';
-import SplitScreen from './SplitScreen';
 
 class App extends Component {
     constructor(props) {
@@ -99,18 +98,16 @@ class App extends Component {
         return (
             <main className="app">
                 {startQuiz ? (
-                    <SplitScreen
-                        header={
-                            <ErrorBoundary>
-                                <Progress
-                                    current={currentQuestion}
-                                    onChange={this.handleProgress}
-                                    showSteps={true}
-                                    totalSteps={questions.length}
-                                />
-                            </ErrorBoundary>
-                        }
-                    >
+                    <>
+                        <ErrorBoundary>
+                            <Progress
+                                current={currentQuestion}
+                                onChange={this.handleProgress}
+                                showSteps={true}
+                                totalSteps={questions.length}
+                            />
+                        </ErrorBoundary>
+
                         <ErrorBoundary>
                             <Quiz
                                 question={activeQuestion.question}
@@ -142,7 +139,7 @@ class App extends Component {
                                     </button>
                                 )}
                         </ErrorBoundary>
-                    </SplitScreen>
+                    </>
                 ) : (
                     <ErrorBoundary>
                         <Introduction onStart={this.startQuiz} />
