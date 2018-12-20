@@ -4,7 +4,11 @@ import './Introduction.css';
 function Introduction({ onStart }) {
     return (
         <section className="introduction">
-            <h1 className="introduction__heading">The 2018 Rausch Quiz!</h1>
+            <h1 className="introduction__heading">
+                <span className="visuallyhidden">
+                    Rausch Family: 2018 Christmas Quiz
+                </span>
+            </h1>
 
             <p>
                 <strong>Pop quiz, Hot Shot!</strong>
