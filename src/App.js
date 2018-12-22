@@ -108,6 +108,8 @@ class App extends Component {
                             />
                         </ErrorBoundary>
 
+                        {activePreamble}
+
                         <ErrorBoundary>
                             <Quiz
                                 question={activeQuestion.question}
@@ -120,7 +122,6 @@ class App extends Component {
 
                         <ErrorBoundary>
                             <Reward
-                                preamble={activePreamble}
                                 image={activeReward.image}
                                 show={!!activeAnswer}
                                 video={activeReward.video}

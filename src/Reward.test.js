@@ -8,15 +8,9 @@ it('render without crashing', () => {
     ReactDOM.unmountComponentAtNode(div);
 });
 
-it('renders pending', () => {
+it('renders nothing without show', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Reward show={false} />, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
-
-it('renders preamble', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<Reward show={false} preamble={<p>Preamble</p>} />, div);
     ReactDOM.unmountComponentAtNode(div);
 });
 
