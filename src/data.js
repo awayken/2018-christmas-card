@@ -13,6 +13,25 @@ import milesNovel from './rewards/miles-no-story-to-tell.jpg';
 export const questions = [
     {
         preamble: 'miles',
+        question: `Miles started the year working for Thit.com. Which website does he work for now?`,
+        answers: [
+            {
+                id: 'm10',
+                text: `Carsforsale.com`
+            },
+            {
+                id: 'm11',
+                text: `NYTimes.com`
+            },
+            {
+                id: 'm12',
+                text: `MilesRausch.com`
+            },
+            { id: 'm13', text: `Facebook.com` }
+        ],
+        correctAnswer: 'm10'
+    },
+    {
         question: `Miles's novel, No Story to Tell, won the Blazing Lantern Fiction Prize! What is the novel's plot?`,
         answers: [
             {
@@ -33,25 +52,6 @@ export const questions = [
             }
         ],
         correctAnswer: 'm01'
-    },
-    {
-        question: `Miles started the year working for Thit.com. Which website does he work for now?`,
-        answers: [
-            {
-                id: 'm10',
-                text: `Carsforsale.com`
-            },
-            {
-                id: 'm11',
-                text: `NYTimes.com`
-            },
-            {
-                id: 'm12',
-                text: `MilesRausch.com`
-            },
-            { id: 'm13', text: `Facebook.com` }
-        ],
-        correctAnswer: 'm10'
     },
     {
         preamble: 'holli',
@@ -79,9 +79,9 @@ export const questions = [
     {
         question: `Holli's favorite musical is Hamilton. Where did she see performances of Hamilton?`,
         answers: [
-            { id: 'h10', text: `Nowhere yet. 2019 is the year, baby!` },
             { id: 'h11', text: `Chicago, IL` },
             { id: 'h12', text: `Des Moines, IA` },
+            { id: 'h10', text: `Nowhere yet. 2019 is the year, baby!` },
             { id: 'h13', text: `Chicago, IL, AND Des Moines, IA, baby!` }
         ],
         correctAnswer: 'h13'
@@ -130,10 +130,10 @@ export const questions = [
     {
         question: `Ainsley is learning to read in Kindergarten. Which is her favorite word so far?`,
         answers: [
-            { id: 'a11', text: `where` },
-            { id: 'a12', text: `the` },
-            { id: 'a13', text: `cardiovascular` },
-            { id: 'a10', text: `for` }
+            { id: 'a11', text: `"where"` },
+            { id: 'a12', text: `"the"` },
+            { id: 'a13', text: `"cardiovascular"` },
+            { id: 'a10', text: `"for"` }
         ],
         correctAnswer: 'a10'
     },
@@ -156,7 +156,7 @@ export const questions = [
             { id: 'b12', text: `Psych! We're still not telling!` },
             {
                 id: 'b13',
-                text: `We honestly don't know. Baby wouldn't quit moving around!`
+                text: `We honestly don't know!`
             }
         ],
         correctAnswer: 'b10'
