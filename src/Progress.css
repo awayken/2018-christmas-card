@@ -1,25 +1,103 @@
 .progress {
     align-items: center;
-    border-bottom: 2px solid #000;
     display: flex;
     justify-content: center;
     padding: 0.5em;
 }
 
-.progress__pager {
-    margin: 0 0.25em;
+.progress__btn {
+    appearance: none;
+    background: transparent;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    height: 2em;
+    margin: 0 0.5em;
+    width: 2em;
 }
 
+.progress__pager {
+    border: 0;
+    color: #fff;
+    padding: 0;
+    position: relative;
+    width: 5em;
+}
+
+.progress__pager::after,
+.progress__pager::before {
+    border: 1em solid transparent;
+    border-radius: 0;
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+.progress__pager--back {
+    text-align: right;
+}
+
+.progress__pager--back::after,
+.progress__pager--back::before {
+    left: 0;
+}
+
+.progress__pager--back::before {
+    border-right-color: #fff;
+}
+
+.progress__pager--back::after {
+    border-right-color: #dc0024;
+    left: 4px;
+    transform: scale(0.6);
+}
+
+.progress__pager--next {
+    text-align: left;
+}
+
+.progress__pager--next::after,
+.progress__pager--next::before {
+    right: 0;
+}
+
+.progress__pager--next::before {
+    border-left-color: #fff;
+}
+
+.progress__pager--next::after {
+    border-left-color: #dc0024;
+    left: auto;
+    right: 4px;
+    transform: scale(0.6);
+}
+
+/* Maybe don't need to hide steps on mobile */
 .progress__step {
     display: none;
 }
 
-.progress__step--active {
-    display: block;
-}
-
 @media (min-width: 768px) {
+    .progress__pager {
+        width: 2em;
+    }
+
+    .progress__pager-label {
+        display: none;
+    }
+
     .progress__step {
         display: block;
+    }
+
+    .progress__step--active {
+        background-color: #dc0024;
+        background-image: url('/images/peppermint.svg');
+        background-position: center center;
+        border: none;
     }
 }
