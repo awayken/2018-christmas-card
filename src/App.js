@@ -108,7 +108,12 @@ class App extends Component {
                             />
                         </ErrorBoundary>
 
-                        {activePreamble}
+                        {activePreamble && (
+                            <div
+                                className="app__preamble"
+                                children={activePreamble}
+                            />
+                        )}
 
                         <ErrorBoundary>
                             <Quiz

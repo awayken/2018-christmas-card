@@ -2,3 +2,9 @@
     margin: 0 auto;
     max-width: 1050px;
 }
+
+.app__preamble {
+    margin: 3em auto;
+    max-width: 800px;
+    text-align: center;
+}
