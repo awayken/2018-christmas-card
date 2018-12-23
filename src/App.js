@@ -132,7 +132,7 @@ class App extends Component {
                             {!!activeAnswer &&
                                 currentQuestion < questions.length - 1 && (
                                     <button
-                                        className="btn btn--next btn--primary"
+                                        className="btn btn--primary"
                                         onClick={this.handleProgress}
                                         value="next"
                                     >

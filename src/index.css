@@ -59,19 +59,10 @@ a:visited {
     background: #dc0024;
     border-color: #fff;
     color: #fff;
-    font-size: 1.25em;
-    padding: 0.5em 1.5em;
-}
-
-.btn--secondary {
-    background: #0f8a5f;
-    color: rgba(255, 255, 255, 0.9);
-    font-weight: bold;
-}
-
-.btn--next {
     display: block;
+    font-size: 1.25em;
     margin: 0 auto 1em;
+    padding: 0.5em 1.5em;
 }
 
 .visuallyhidden {

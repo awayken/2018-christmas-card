@@ -28,7 +28,7 @@ function Introduction({ onStart }) {
                 2019.
             </p>
 
-            <button className="btn btn--primary btn--next" onClick={onStart}>
+            <button className="btn btn--primary" onClick={onStart}>
                 Take the Quiz
             </button>
         </section>
