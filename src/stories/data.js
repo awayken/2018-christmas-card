@@ -15,9 +15,5 @@ export const answers = [
         id: 'q4',
         text:
             'There has to be some sort of super long answer to really test wrapping and overflow and all those other visual properties.'
-    },
-    {
-        id: 'q5',
-        text: '42.'
     }
 ];

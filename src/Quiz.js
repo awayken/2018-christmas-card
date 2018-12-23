@@ -14,26 +14,27 @@ function Quiz({
 
             <ol className="quiz__answers">
                 {answers.map(({ text, id }) => {
-                    const hasAnswered =
-                        selectedAnswer.length && selectedAnswer === id;
-                    const isCorrect = selectedAnswer === correctAnswer;
+                    const hasAnswered = selectedAnswer.length;
+                    const isCorrectAnswer = hasAnswered && correctAnswer === id;
+                    const isIncorrectAnswer =
+                        hasAnswered &&
+                        !isCorrectAnswer &&
+                        selectedAnswer === id;
+
+                    if (hasAnswered && !isCorrectAnswer && !isIncorrectAnswer) {
+                        return null;
+                    }
 
                     return (
                         <li className="quiz__answerbox" key={id}>
                             <button
                                 className={`quiz__answer btn ${
-                                    hasAnswered && isCorrect
+                                    isCorrectAnswer
                                         ? 'quiz__answer--correct'
                                         : ''
                                 } ${
-                                    hasAnswered && !isCorrect
+                                    isIncorrectAnswer
                                         ? 'quiz__answer--incorrect'
-                                        : ''
-                                } ${
-                                    selectedAnswer.length &&
-                                    !isCorrect &&
-                                    correctAnswer === id
-                                        ? 'quiz__answer--wascorrect'
                                         : ''
                                 }`}
                                 disabled={selectedAnswer.length}

@@ -17,17 +17,6 @@ export function getEmbedSrc(video = '') {
     return embedSrc;
 }
 
-function RewardSpinner({ preamble }) {
-    const spinner = preamble || (
-        <p>Answer the quiz question to see your reward.</p>
-    );
-    return (
-        <aside className="reward__preamble" role="alert" aria-live="assertive">
-            {spinner}
-        </aside>
-    );
-}
-
 function RewardImage({ alt = '', image }) {
     return (
         <div className="reward__frame reward__imagebox">
@@ -54,7 +43,7 @@ function RewardVideo({ title = '', video }) {
     );
 }
 
-function Reward({ alt = '', image, preamble, show = false, video, children }) {
+function Reward({ alt = '', image, show = false, video, children }) {
     let hero = null;
 
     if (image) {
@@ -63,13 +52,15 @@ function Reward({ alt = '', image, preamble, show = false, video, children }) {
         hero = <RewardVideo title={alt} video={video} />;
     }
 
+    if (!show) {
+        return null;
+    }
+
     return (
         <section className="reward">
-            {!show && <RewardSpinner preamble={preamble} />}
+            {hero}
 
-            {show && hero}
-
-            {show && <div className="reward__children">{children}</div>}
+            <div className="reward__children">{children}</div>
         </section>
     );
 }

@@ -7,7 +7,6 @@ import Introduction from './Introduction';
 import Progress from './Progress';
 import Quiz from './Quiz';
 import Reward from './Reward';
-import SplitScreen from './SplitScreen';
 
 class App extends Component {
     constructor(props) {
@@ -99,18 +98,23 @@ class App extends Component {
         return (
             <main className="app">
                 {startQuiz ? (
-                    <SplitScreen
-                        header={
-                            <ErrorBoundary>
-                                <Progress
-                                    current={currentQuestion}
-                                    onChange={this.handleProgress}
-                                    showSteps={true}
-                                    totalSteps={questions.length}
-                                />
-                            </ErrorBoundary>
-                        }
-                    >
+                    <>
+                        <ErrorBoundary>
+                            <Progress
+                                current={currentQuestion}
+                                onChange={this.handleProgress}
+                                showSteps={true}
+                                totalSteps={questions.length}
+                            />
+                        </ErrorBoundary>
+
+                        {activePreamble && (
+                            <div
+                                className="app__preamble"
+                                children={activePreamble}
+                            />
+                        )}
+
                         <ErrorBoundary>
                             <Quiz
                                 question={activeQuestion.question}
@@ -123,7 +127,6 @@ class App extends Component {
 
                         <ErrorBoundary>
                             <Reward
-                                preamble={activePreamble}
                                 image={activeReward.image}
                                 show={!!activeAnswer}
                                 video={activeReward.video}
@@ -134,7 +137,7 @@ class App extends Component {
                             {!!activeAnswer &&
                                 currentQuestion < questions.length - 1 && (
                                     <button
-                                        className="btn btn--next btn--primary"
+                                        className="btn btn--primary"
                                         onClick={this.handleProgress}
                                         value="next"
                                     >
@@ -142,7 +145,7 @@ class App extends Component {
                                     </button>
                                 )}
                         </ErrorBoundary>
-                    </SplitScreen>
+                    </>
                 ) : (
                     <ErrorBoundary>
                         <Introduction onStart={this.startQuiz} />

@@ -4,7 +4,6 @@
     flex-direction: column;
     font-size: 1.3em;
     justify-content: stretch;
-    text-align: center;
 }
 
 .reward__preamble {
@@ -20,7 +19,7 @@
     box-shadow: 0 2px 0.35em rgba(0, 0, 0, 0.4);
     margin: 0.5em auto;
     max-width: 90%;
-    padding: 0.5em 0.5em 2em;
+    padding: 0.5em;
     width: 500px;
 }
 
@@ -32,7 +31,6 @@
 
 .reward__image {
     display: inline-block;
-    max-height: 50vh;
     max-width: 100%;
 }
 

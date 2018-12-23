@@ -35,10 +35,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Introduces the user to the game and the card premise.
 
-### `<SplitScreen />`
-
-Splits its children into two panels, which align vertically for narrow screens and horizontally for wide screens.
-
 ### `<Progress />`
 
 Tracks progress through the game.

@@ -7,14 +7,14 @@ function Steps({ current, onChange, totalSteps = 1 }) {
     for (let i = 0; i < totalSteps; i++) {
         steps.push(
             <button
-                className={`progress__step btn ${
-                    current === i ? 'progress__step--active btn--secondary' : ''
+                className={`progress__btn progress__step ${
+                    current === i ? 'progress__step--active' : ''
                 }`}
                 key={`step_${i}`}
                 onClick={onChange}
                 value={i}
             >
-                {i + 1}
+                <span className="visuallyhidden">Question {i + 1}</span>
             </button>
         );
     }
@@ -26,12 +26,12 @@ function Progress({ current = 0, onChange = () => {}, totalSteps = 1 }) {
     return (
         <div className="progress">
             <button
-                className="progress__pager btn"
+                className="progress__pager progress__pager--back progress__btn"
                 disabled={current === 0}
                 onClick={onChange}
                 value="back"
             >
-                &larr; Back
+                <span className="progress__pager-label">Back</span>
             </button>
 
             <Steps
@@ -41,12 +41,12 @@ function Progress({ current = 0, onChange = () => {}, totalSteps = 1 }) {
             />
 
             <button
-                className="progress__pager btn"
+                className="progress__pager progress__pager--next progress__btn"
                 disabled={current === totalSteps - 1}
                 onClick={onChange}
                 value="next"
             >
-                Next &rarr;
+                <span className="progress__pager-label">Next</span>
             </button>
         </div>
     );

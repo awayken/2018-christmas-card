@@ -1,8 +1,10 @@
 .app {
-    background: rgba(255, 255, 255, 0.95);
-    border: 3px solid #000;
-    border-radius: 0.35em;
-    box-shadow: 0 2px 0.35em rgba(0, 0, 0, 0.4);
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 1050px;
+}
+
+.app__preamble {
+    margin: 3em auto;
+    max-width: 800px;
+    text-align: center;
 }

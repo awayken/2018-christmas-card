@@ -10,7 +10,6 @@ import Introduction from '../Introduction';
 import Quiz from '../Quiz';
 import Progress from '../Progress';
 import Reward from '../Reward';
-import SplitScreen from '../SplitScreen';
 
 storiesOf('ErrorBoundary', module).add('renders', () => (
     <ErrorBoundary>
@@ -77,13 +76,7 @@ storiesOf('Progress', module)
     ));
 
 storiesOf('Reward', module)
-    .add('renders pending', () => <Reward show={false} />)
-    .add('renders preamble', () => (
-        <Reward
-            show={false}
-            preamble={<p>A custom Preamble instead of default spinner text.</p>}
-        />
-    ))
+    .add('renders nothing without show', () => <Reward show={false} />)
     .add('renders image', () => (
         <Reward image="https://placehold.it/800x600" show={true} />
     ))
@@ -99,31 +92,4 @@ storiesOf('Reward', module)
         <Reward video="https://youtu.be/bHFbaF9_kpI" show={true}>
             <p>This year we saw this cool video!</p>
         </Reward>
-    ));
-
-storiesOf('SplitScreen', module)
-    .add('renders 2 children', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-        </SplitScreen>
-    ))
-    .add('renders 1 child', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-        </SplitScreen>
-    ))
-    .add('renders more children', () => (
-        <SplitScreen>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-            <p>Panel 3</p>
-            <p>Panel 4</p>
-        </SplitScreen>
-    ))
-    .add('renders with a header', () => (
-        <SplitScreen header={<p>Header.</p>}>
-            <p>Panel 1</p>
-            <p>Panel 2</p>
-        </SplitScreen>
     ));
