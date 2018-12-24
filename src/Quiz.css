@@ -34,12 +34,12 @@
 }
 
 .quiz__answer--correct {
-    background-image: url('/images/quiz-answer-correct.svg');
+    background-image: url('./images/quiz-answer-correct.svg');
     color: #029922;
 }
 
 .quiz__answer--incorrect {
-    background-image: url('/images/quiz-answer-incorrect.svg');
+    background-image: url('./images/quiz-answer-incorrect.svg');
     background-position-x: -6px; /* Compensate for extra space in SVG */
     color: #dc0024;
 }
