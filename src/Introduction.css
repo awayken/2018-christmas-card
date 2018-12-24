@@ -3,7 +3,7 @@
 }
 
 .introduction__heading {
-    background: url('/images/logo.png') no-repeat center center transparent;
+    background: url('./images/logo.png') no-repeat center center transparent;
     background-size: contain;
     margin: 0 auto;
     max-width: 546px;

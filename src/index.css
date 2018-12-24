@@ -29,8 +29,8 @@ a:visited {
 
 .canvas {
     background-color: #000;
-    background-image: url('/images/flurry-left.png'),
-        url('/images/flurry-right.png'),
+    background-image: url('./images/flurry-left.png'),
+        url('./images/flurry-right.png'),
         linear-gradient(to right, #03783a, #06b447 50%, #03783a);
     background-position: -80px top, calc(100vw - 130px) top, center top;
     background-repeat: repeat-y, repeat-y, no-repeat;

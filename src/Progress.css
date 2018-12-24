@@ -96,7 +96,7 @@
 
     .progress__step--active {
         background-color: #dc0024;
-        background-image: url('/images/peppermint.svg');
+        background-image: url('./images/peppermint.svg');
         background-position: center center;
         border: none;
     }
