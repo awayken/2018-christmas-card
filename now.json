@@ -1,6 +1,7 @@
 {
     "version": 2,
     "name": "2018-christmas-card",
+    "alias": "2018ccard.now.sh",
     "builds": [
         {
             "src": "package.json",
@@ -11,6 +12,10 @@
         {
             "src": "^/static/(.*)",
             "dest": "/static/$1"
+        },
+        {
+            "src": "^/images/(.*)",
+            "dest": "/images/$1"
         },
         {
             "src": "^/favicon.ico",
